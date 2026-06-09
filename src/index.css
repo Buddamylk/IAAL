@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --b {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --c {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --d {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --e {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --f {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --g {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --h {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+
+    --color-primary: #5A4634;
+    --color-secondary: #C79A43;
+    --color-accent: #B65F3A;
+    --color-supporting: #7C8B6B;
+    --color-bg: #F8F4ED;
+    --color-dark: #2B2B2B;
+    --color-text: #2B2B2B;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+}
+
+/* Aurora Dome Effect */
+.aurora-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.aurora-dome {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: -50vh;
+  left: 0;
+  filter: blur(80px);
+  opacity: 0.7;
+  will-change: transform;
+  transform: rotate(15deg);
+  background:
+    conic-gradient(from var(--a) at 50% 100%, #7C8B6B 0%, transparent 20%),
+    conic-gradient(from var(--b) at 50% 100%, #B65F3A 10%, transparent 30%),
+    conic-gradient(from var(--c) at 50% 100%, #F8F4ED 20%, transparent 40%),
+    conic-gradient(from var(--d) at 50% 100%, #C79A43 30%, transparent 50%),
+    conic-gradient(from var(--e) at 50% 100%, #5A4634 40%, transparent 60%),
+    conic-gradient(from var(--f) at 50% 100%, #7C8B6B 50%, transparent 70%),
+    conic-gradient(from var(--g) at 50% 100%, #B65F3A 60%, transparent 80%),
+    conic-gradient(from var(--h) at 50% 100%, #F8F4ED 70%, transparent 90%);
+  animation: auroraRotate 20s linear infinite;
+}
+
+@keyframes auroraRotate {
+  0% {
+    --a: 0deg;
+    --b: 0deg;
+    --c: 0deg;
+    --d: 0deg;
+    --e: 0deg;
+    --f: 0deg;
+    --g: 0deg;
+    --h: 0deg;
+  }
+  100% {
+    --a: 360deg;
+    --b: -360deg;
+    --c: 360deg;
+    --d: -360deg;
+    --e: 360deg;
+    --f: -360deg;
+    --g: 360deg;
+    --h: -360deg;
+  }
+}
+
+/* Aurora fade overlay */
+.aurora-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #F8F4ED 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Scroll indicator bounce */
+@keyframes bounceChevron {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.scroll-indicator {
+  animation: bounceChevron 2s ease-in-out infinite;
+}
+
+/* Footer light streak */
+.footer-streak {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7C8B6B, #C79A43, transparent);
+  background-size: 200% 100%;
+  animation: streakMove 8s linear infinite;
+}
+
+@keyframes streakMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-dome {
+    animation: none;
+    background: radial-gradient(ellipse at 50% 0%, #7C8B6B 0%, #B65F3A 20%, #F8F4ED 50%, #F8F4ED 100%);
+  }
+  .footer-streak {
+    animation: none;
+  }
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

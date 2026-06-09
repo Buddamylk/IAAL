@@ -117,8 +117,16 @@ const Founder = () => {
             >
               Her work bridges ancient wisdom and modern leadership challenges, offering practical
               pathways toward renewal, resilience, and meaningful impact.
-            </p>
+           </p>
           </div>
+          
+            href="https://books2read.com/Thegreatmoment"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-8 px-8 py-3 font-body font-medium text-sm tracking-[0.05em] text-cream border border-gold hover:bg-gold hover:text-charcoal transition-all duration-300"
+          >
+            More About "The Great Moment"
+          </a>
         </div>
       </div>
     </section>

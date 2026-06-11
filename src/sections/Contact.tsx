@@ -68,7 +68,7 @@ const Contact = () => {
         </p>
         <a
           ref={buttonRef}
-          href="mailto:info@authenticliving.global"
+          href="mailto:MiannonDabe@proton.me?subject=Discovery%20Conversation%20Request"
           className="inline-block font-body font-medium text-base px-10 py-4 transition-all duration-300"
           style={{
             backgroundColor: '#C79A43',

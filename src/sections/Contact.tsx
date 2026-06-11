@@ -72,18 +72,13 @@ const Contact = () => {
           className="inline-block font-body font-medium text-base px-10 py-4 transition-all duration-300"
           style={{
             backgroundColor: '#C79A43',
-            color: '#2B2B2B',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#F8F4ED'
-            e.currentTarget.style.color = '#5A4634'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#C79A43'
-            e.currentTarget.style.color = '#2B2B2B'
+            color: 'white',
+            borderRadius: '4px',
+            textDecoration: 'none',
+            display: 'inline-block'
           }}
         >
-          Book a Discovery Conversation
+          Contact Us
         </a>
       </div>
     </section>
